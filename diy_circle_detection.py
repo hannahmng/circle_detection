@@ -42,15 +42,15 @@ def has_mask(frame):
     return False
 
 
-def plot_frame_with_circle(frame, circle):
+def plot_frame_with_circle(frame, midpoint, radius):
 
-    circle_to_be_drawn = plt.Circle((circle.midpoint[1], circle.midpoint[0]), circle.radius, color='r', fill=False)
+    circle_to_be_drawn = plt.Circle((midpoint[1], midpoint[0]), radius, color='r', fill=False)
 
     fig, ax = plt.subplots()
     ax.imshow(frame, cmap='gray')
     ax.autoscale(False)
     ax.add_artist(circle_to_be_drawn)
-    ax.scatter(circle.midpoint[1], circle.midpoint[0], color='r')
+    ax.scatter(midpoint[1], midpoint[0], color='r')
     plt.show()
 
 
@@ -83,26 +83,10 @@ def main():
 
     print(circle.midpoint, radius)
 
-    plot_frame_with_circle(thresh_frame, circle)
+    plot_frame_with_circle(thresh_frame, circle.midpoint, circle.radius)
 
 
 if __name__ == '__main__':
 
     main()
-
-
-
-#
-# for radius in range(int((1 / 3) * blurred_frame.shape[1]), int((4 / 3) * blurred_frame.shape[0])):
-#     circles = cv2.HoughCircles(blurred_frame, cv2.HOUGH_GRADIENT, dp=5, minDist=500, minRadius=radius, param1=50,
-#                                param2=20)
-#
-# circles = np.uint16(np.around(circles))
-#
-# for i in circles[0, :]:
-#     cv2.circle(thresh_frame, (i[0], i[1]), i[2], (0, 255, 0), 2)
-#     cv2.circle(thresh_frame, (i[0], i[1]), 2, (0, 0, 255), 3)
-#
-# cv2.imshow('circles', thresh_frame)
-# cv2.waitKey(0)
 
