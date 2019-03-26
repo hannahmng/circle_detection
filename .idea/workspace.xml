@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e805072-b040-4ad5-8554-9cdf93c3e6d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frame_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/using_lib/precoded_circle_detection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circe_detection_using_precoded.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/circle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diy_circle_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/diy_circle_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circle.py" beforeDir="false" afterPath="$PROJECT_DIR$/diy/circle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diy_circle_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/diy/diy_circle_detection.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/diy_circle_detection.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diy/diy_circle_detection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+            <state relative-caret-position="69">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -31,20 +30,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frame_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+            <state relative-caret-position="195">
+              <caret line="28" selection-start-line="28" selection-end-line="35" selection-end-column="14" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#36#204#0" />
                 <element signature="e#233#356#0" />
-                <element signature="e#417#700#0" />
+                <element signature="e#738#1444#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/using_lib/precoded_circle_detection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <marker date="1553616169145" expanded="true" signature="1884:1937" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/circle.py">
+        <entry file="file://$PROJECT_DIR$/diy/circle.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="18" selection-start-column="18" selection-end-column="18" />
@@ -84,14 +96,14 @@
         <option value="$PROJECT_DIR$/circle.py" />
         <option value="$PROJECT_DIR$/frame_utils.py" />
         <option value="$PROJECT_DIR$/diy_circle_detection.py" />
+        <option value="$PROJECT_DIR$/using_lib/precoded_circle_detection.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="161" />
-    <option name="y" value="427" />
-    <option name="width" value="1910" />
-    <option name="height" value="1051" />
+    <option name="y" value="424" />
+    <option name="width" value="1920" />
+    <option name="height" value="526" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -106,6 +118,16 @@
               <item name="pre_processing" type="b2602c69:ProjectViewProjectNode" />
               <item name="pre_processing" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pre_processing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pre_processing" type="462c0819:PsiDirectoryNode" />
+              <item name="diy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pre_processing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pre_processing" type="462c0819:PsiDirectoryNode" />
+              <item name="using_lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -115,6 +137,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dbUploadingMe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/diy" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -128,7 +155,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.edge detection">
+  <component name="RunManager" selected="Python.precoded_circle_detection">
     <configuration name="circe_detection_using_precoded" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pre_processing" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,7 +189,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/diy_circle_detection.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/diy/diy_circle_detection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="precoded_circle_detection" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pre_processing" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/using_lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/using_lib/precoded_circle_detection.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,6 +221,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.precoded_circle_detection" />
         <item itemvalue="Python.edge detection" />
         <item itemvalue="Python.circe_detection_using_precoded" />
       </list>
@@ -196,10 +245,10 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.29601723" />
-      <window_info anchor="bottom" id="Debug" order="1" weight="0.032292787" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.3315393" />
+      <window_info anchor="bottom" id="Debug" order="1" visible="true" weight="0.31862217" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32938644" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32938644" />
       <window_info anchor="bottom" id="Terminal" order="4" />
@@ -250,14 +299,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/venv/hannah/lib/python3.6/site-packages/numpy/core/fromnumeric.py">
+    <entry file="file://$PROJECT_DIR$/circe_detection_using_precoded.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="2306" selection-start-line="2306" selection-end-line="2306" />
+        <state relative-caret-position="825">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/circle.py">
+    <entry file="file://$PROJECT_DIR$/diy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diy/circle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="18" selection-start-column="18" selection-end-column="18" />
@@ -271,35 +326,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/circe_detection_using_precoded.py">
+    <entry file="file://$PROJECT_DIR$/diy/diy_circle_detection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="69">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frame_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        <state relative-caret-position="195">
+          <caret line="28" selection-start-line="28" selection-end-line="35" selection-end-column="14" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#36#204#0" />
             <element signature="e#233#356#0" />
-            <element signature="e#417#700#0" />
+            <element signature="e#738#1444#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diy_circle_detection.py">
+    <entry file="file://$USER_HOME$/venv/hannah/lib/python3.6/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+        <state relative-caret-position="202">
+          <caret line="2850" selection-start-line="2850" selection-end-line="2850" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/using_lib/precoded_circle_detection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+            <marker date="1553616169145" expanded="true" signature="1884:1937" ph="..." />
           </folding>
         </state>
       </provider>

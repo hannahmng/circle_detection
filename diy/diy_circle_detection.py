@@ -1,6 +1,6 @@
 import argparse
 from frame_utils import *
-from circle import Circle
+from diy.circle import Circle
 
 DEFAULT_VIDEO_FILES = ["/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_001.mp4",
                        "/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_002.mp4",
