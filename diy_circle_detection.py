@@ -1,7 +1,5 @@
-import cv2
 import argparse
-from matplotlib import pyplot as plt
-import numpy as np
+from frame_utils import *
 from circle import Circle
 
 DEFAULT_VIDEO_FILES = ["/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_001.mp4",
@@ -29,80 +27,13 @@ ap.add_argument("--ms_options", type=list, required=False, help="times to get fr
 args = ap.parse_args()
 
 
-def get_frame(filepath, ms):
-
-    vid = cv2.VideoCapture(filepath)
-    vid.set(cv2.CAP_PROP_POS_MSEC, ms)
-    _, frame = vid.read()
-
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-    return frame
-
-
-def has_mask(frame):
-
-    white_vals_at_top = np.where(frame[:10, :] > 10)
-
-    if len(white_vals_at_top) < 15:
-        return True
-
-    return False
-
-
-def plot_frame_with_circle(frame, midpoint, radius):
-
-    circle_to_be_drawn = plt.Circle((midpoint[1], midpoint[0]), radius, color='r', fill=False)
-
-    fig, ax = plt.subplots()
-    ax.imshow(frame, cmap='gray')
-    ax.autoscale(False)
-    ax.add_artist(circle_to_be_drawn)
-    ax.scatter(midpoint[1], midpoint[0], color='r')
-    plt.show()
-
-
-def choose_frame(video_file):
-
-    best_frame = []
-    highest_max_val_idx = 0
-
-    for ms in args.ms_options:
-
-        try:
-            frame = get_frame(video_file, int(ms))
-        except cv2.Error:
-            print("WARNING tried to get frame outside of video length")
-            continue
-
-        hist = np.histogram(frame, bins=256)
-
-        cut_data = [hist[0][i] for i in range(len(hist[0])) if hist[1][i] > 2]
-        max_val_idx = np.argmax(cut_data)
-
-        if max_val_idx > highest_max_val_idx:
-
-            highest_max_val_idx = max_val_idx
-            best_frame = frame
-
-    plt.imshow(best_frame, cmap='gray')
-    plt.show()
-
-    plt.hist(best_frame.ravel(), bins=256, fc='k', ec='k')
-    plt.show()
-
-    return best_frame
-
-
 def main():
-
-    # todo make more robust to noise at top left
 
     for video in args.video_files:
 
         curr_frame_has_mask = False
 
-        frame = choose_frame(video)
+        frame = choose_frame(video, args.ms_options)
 
         _, thresh_frame = cv2.threshold(frame, 10, 50, cv2.THRESH_BINARY)
 
@@ -117,18 +48,14 @@ def main():
 
         circle = Circle(edged_frame)
         circle_point = circle.determine_midpoint()
-        # if not circle.has_circle:
-        #     continue
         radius = circle.determine_radius(circle_point)
-        # if not circle.has_circle:
-        #     continue
 
         if curr_frame_has_mask:
             circle.midpoint[0] = circle.midpoint[0] - 10
 
         print(circle.midpoint, radius, circle_point)
 
-        plot_frame_with_circle(thresh_frame, circle.midpoint, circle.radius)
+        plot_frame_with_circle(frame, circle.midpoint, circle.radius)
 
 
 if __name__ == '__main__':

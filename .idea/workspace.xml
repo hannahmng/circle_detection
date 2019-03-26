@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e805072-b040-4ad5-8554-9cdf93c3e6d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frame_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circe_detection_using_precoded.py" beforeDir="false" afterPath="$PROJECT_DIR$/circe_detection_using_precoded.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circe_detection_using_precoded.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/circle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/diy_circle_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/diy_circle_detection.py" afterDir="false" />
     </list>
@@ -18,13 +19,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/diy_circle_detection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="394">
+              <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frame_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#42#212#0" />
-                <element signature="e#1473#1594#0" />
-                <element signature="e#2171#2697#0" />
+                <element signature="e#36#204#0" />
+                <element signature="e#233#356#0" />
+                <element signature="e#417#700#0" />
               </folding>
             </state>
           </provider>
@@ -33,11 +46,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/circle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+            <state>
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#252#871#0" />
+                <element signature="e#289#805#0" />
+                <element signature="e#941#1850#0" />
+                <element signature="e#1902#2698#0" />
+                <element signature="e#2909#3782#0" />
+                <element signature="e#3682#3873#0" />
               </folding>
             </state>
           </provider>
@@ -66,6 +82,7 @@
         <option value="$PROJECT_DIR$/edge detection.py" />
         <option value="$PROJECT_DIR$/circe_detection_using_precoded.py" />
         <option value="$PROJECT_DIR$/circle.py" />
+        <option value="$PROJECT_DIR$/frame_utils.py" />
         <option value="$PROJECT_DIR$/diy_circle_detection.py" />
       </list>
     </option>
@@ -188,7 +205,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32903227" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32831" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -199,13 +216,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/circe_detection_using_precoded.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -240,16 +250,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/circe_detection_using_precoded.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/venv/hannah/lib/python3.6/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -259,24 +259,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/circle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#252#871#0" />
+            <element signature="e#289#805#0" />
+            <element signature="e#941#1850#0" />
+            <element signature="e#1902#2698#0" />
+            <element signature="e#2909#3782#0" />
+            <element signature="e#3682#3873#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/circe_detection_using_precoded.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#36#204#0" />
+            <element signature="e#233#356#0" />
+            <element signature="e#417#700#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/diy_circle_detection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="394">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#42#212#0" />
-            <element signature="e#1473#1594#0" />
-            <element signature="e#2171#2697#0" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

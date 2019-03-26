@@ -1,6 +1,4 @@
 import numpy as np
-from matplotlib import pyplot as plt
-
 
 class Circle:
     NO_OF_SEARCH_LINES = 5
@@ -14,15 +12,9 @@ class Circle:
 
     def determine_midpoint(self):
 
-        top_left, top_right = self.find_top_pixels()
-        if not self.has_circle:
-            return -1
-        top_left = np.amax(top_left, axis=0)
-        top_right = np.amin(top_right, axis=0)
+        top_left, top_right = self.find_edges_of_top_secant()
 
-        bottom_left, bottom_right = self.find_bottom_pixels()
-        bottom_left = np.amax(bottom_left, axis=0)
-        bottom_right = np.amin(bottom_right, axis=0)
+        bottom_left, bottom_right = self.find_edges_of_bottom_secant()
 
         top_right, bottom_left = self.length_check(top_right, top_left, bottom_right, bottom_left, offset=2)
 
@@ -47,20 +39,16 @@ class Circle:
                 print('WARNING something is wrong - top and bottom have passed each other')
 
             if top_length < bottom_length:
-                top_left, top_right = self.find_top_pixels(offset=offset)
-                top_left = np.amax(top_left, axis=0)
-                top_right = np.amin(top_right, axis=0)
+                top_left, top_right = self.find_edges_of_top_secant(offset=offset)
                 top_right, bottom_left = self.length_check(top_right, top_left, bottom_right, bottom_left, offset=offset+20)
 
             elif bottom_length < top_length:
-                bottom_left, bottom_right = self.find_bottom_pixels(offset=offset)
-                bottom_left = np.amax(bottom_left, axis=0)
-                bottom_right = np.amin(bottom_right, axis=0)
+                bottom_left, bottom_right = self.find_edges_of_bottom_secant(offset=offset)
                 top_right, bottom_left = self.length_check(top_right, top_left, bottom_right, bottom_left, offset=offset+20)
 
         return top_right, bottom_left
 
-    def find_top_pixels(self, offset=0):
+    def find_edges_of_top_secant(self, offset=0):
 
         top_left = []
         top_right = []
@@ -79,14 +67,14 @@ class Circle:
         if len(top_left) == 0 or len(top_right) == 0:
             if offset > 200:
                 raise TypeError("no circle could be found in this image")
-                # print("WARNING no circle found")
-                # self.has_circle = False
-                # return top_left, top_right
-            top_left, top_right = self.find_top_pixels(offset=offset+20)
+            top_left, top_right = self.find_edges_of_top_secant(offset=offset + 20)
+
+        top_left = np.amax(top_left, axis=0)
+        top_right = np.amin(top_right, axis=0)
 
         return top_left, top_right
 
-    def find_bottom_pixels(self, offset=0):
+    def find_edges_of_bottom_secant(self, offset=0):
 
         bottom_right = []
         bottom_left = []
@@ -107,10 +95,10 @@ class Circle:
         if len(bottom_left) == 0 or len(bottom_right) == 0:
             if offset > 200:
                 raise TypeError("no circle could be found in this image")
-                # print("WARNING no circle found")
-                # self.has_circle = False
-                # return bottom_left, bottom_right
-            bottom_left, bottom_right = self.find_bottom_pixels(offset=offset + 20)
+            bottom_left, bottom_right = self.find_edges_of_bottom_secant(offset=offset + 20)
+
+        bottom_left = np.amax(bottom_left, axis=0)
+        bottom_right = np.amin(bottom_right, axis=0)
 
         return bottom_left, bottom_right
 
@@ -123,8 +111,6 @@ class Circle:
 
         if self.radius < (1/2.5)*(self.frame.shape[1]):
             raise TypeError("no circle could be found in this image")
-            # print("WARNING the circle found is too small to be valid")
-            # self.has_circle = False
 
         return self.radius
 
