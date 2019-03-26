@@ -23,7 +23,6 @@ args = ap.parse_args()
 
 def main():
 
-
     frame = get_frame(args.video_file, 100000)
 
     plt.imshow(frame, cmap='gray')
