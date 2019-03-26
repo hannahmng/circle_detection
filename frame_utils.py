@@ -1,5 +1,6 @@
 import cv2
 from matplotlib import pyplot as plt
+from matplotlib.patches import Ellipse
 import numpy as np
 
 
@@ -26,12 +27,12 @@ def has_mask(frame):
 
 def plot_frame_with_circle(frame, midpoint, radius):
 
-    circle_to_be_drawn = plt.Circle((midpoint[1], midpoint[0]), radius, color='r', fill=False)
+    ellipse_to_be_drawn = Ellipse((midpoint[1], midpoint[0]), radius, radius*0.85, color='r', fill=False)
 
     fig, ax = plt.subplots()
     ax.imshow(frame, cmap='gray')
     ax.autoscale(False)
-    ax.add_artist(circle_to_be_drawn)
+    ax.add_artist(ellipse_to_be_drawn)
     ax.scatter(midpoint[1], midpoint[0], color='r')
     plt.show()
 

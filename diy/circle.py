@@ -1,4 +1,6 @@
 import numpy as np
+from matplotlib import pyplot as plt
+
 
 class Circle:
     NO_OF_SEARCH_LINES = 5
@@ -30,10 +32,18 @@ class Circle:
         bottom_length = bottom_right[1] - bottom_left[1]
         bottom_mid_point = 1/2*(bottom_right[1] - bottom_left[1])
 
-        if abs(top_length - bottom_length) > 20 or abs(top_mid_point - bottom_mid_point) > 200:
+        if abs(top_length - bottom_length) > 20 or abs(top_mid_point - bottom_mid_point) > 20:
 
-            # todo only for debugging purposes
-            print(top_length, bottom_length, top_mid_point, bottom_mid_point)
+            # # todo only for debugging purposes
+            # print(top_length, bottom_length, top_mid_point, bottom_mid_point)
+            # fig, ax = plt.subplots()
+            # ax.imshow(self.frame, cmap='gray')
+            # ax.autoscale(False)
+            # ax.scatter(top_right[1], top_right[0], color='r')
+            # ax.scatter(top_left[1], top_left[0], color='r')
+            # ax.scatter(bottom_left[1], bottom_left[0], color='g')
+            # ax.scatter(bottom_right[1], bottom_right[0], color='g')
+            # plt.show()
 
             if top_right[0] > bottom_right[0]:
                 print('WARNING something is wrong - top and bottom have passed each other')
@@ -106,6 +116,8 @@ class Circle:
 
         delta_x = abs(self.midpoint[1] - circle_point[1])
         delta_y = abs(self.midpoint[0] - circle_point[0])
+
+        # todo make this be majority vote over several points along middle (for long axis)
 
         self.radius = np.sqrt(delta_x**2 + delta_y**2)
 
