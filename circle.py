@@ -34,17 +34,6 @@ class Circle:
 
         if abs(top_length - bottom_length) > 20 or abs(top_mid_point - bottom_mid_point) > 20:
 
-            # # todo only for debugging purposes
-            # print(top_length, bottom_length, top_mid_point, bottom_mid_point)
-            # fig, ax = plt.subplots()
-            # ax.imshow(self.frame, cmap='gray')
-            # ax.autoscale(False)
-            # ax.scatter(top_right[1], top_right[0], color='r')
-            # ax.scatter(top_left[1], top_left[0], color='r')
-            # ax.scatter(bottom_left[1], bottom_left[0], color='g')
-            # ax.scatter(bottom_right[1], bottom_right[0], color='g')
-            # plt.show()
-
             if top_right[0] > bottom_right[0]:
                 print('WARNING something is wrong - top and bottom have passed each other')
 
@@ -112,17 +101,34 @@ class Circle:
 
         return bottom_left, bottom_right
 
-    def determine_radius(self, circle_point):
+    def determine_radius(self):
 
-        delta_x = abs(self.midpoint[1] - circle_point[1])
-        delta_y = abs(self.midpoint[0] - circle_point[0])
+        mid_line = self.midpoint[0]
+        radii = []
 
-        # todo make this be majority vote over several points along middle (for long axis)
+        for line in range(int(mid_line-self.NO_OF_SEARCH_LINES), int(mid_line+self.NO_OF_SEARCH_LINES)):
 
-        self.radius = np.sqrt(delta_x**2 + delta_y**2)
+            pixel = np.where(self.frame[line, :] > 0)
+            circle_point = [line, pixel[0][0]]
+
+            delta_x = abs(self.midpoint[1] - circle_point[1])
+            delta_y = abs(self.midpoint[0] - circle_point[0])
+
+            curr_radius = np.sqrt(delta_x**2 + delta_y**2)
+            radii.append(curr_radius)
+
+        self.radius = np.mean(radii)
+
+        print(self.radius)
 
         if self.radius < (1/2.5)*(self.frame.shape[1]):
             raise TypeError("no circle could be found in this image")
 
         return self.radius
 
+# todo only for debugging purposes
+# fig, ax = plt.subplots()
+# ax.imshow(self.frame, cmap='gray')
+# ax.autoscale(False)
+# ax.scatter(circle_point[1], circle_point[0], color='r')
+# plt.show()

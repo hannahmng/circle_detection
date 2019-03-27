@@ -1,6 +1,8 @@
 import argparse
 from frame_utils import *
-from diy.circle import Circle
+from circle import Circle
+import cv2
+from matplotlib import pyplot as plt
 
 DEFAULT_VIDEO_FILES = ["/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_001.mp4",
                        "/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_002.mp4",
@@ -18,6 +20,9 @@ DEFAULT_VIDEO_FILES = ["/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_001
                        "/mnt/storage/data/s3/procedures-gallery-prod/BZMC/1be3aeba-8113-4393-8f80-8367756933ec.m2t.NS.NoProp.MP4"]
 
 MS_OPTIONS = [1000, 2000, 50000, 10000, 15000, 20000, 50000, 100000]
+
+radius_ratio = 0.97
+
 
 ap = argparse.ArgumentParser()
 
@@ -48,14 +53,14 @@ def main():
 
         circle = Circle(edged_frame)
         circle_point = circle.determine_midpoint()
-        radius = circle.determine_radius(circle_point)
+        radius = circle.determine_radius()
 
         if curr_frame_has_mask:
             circle.midpoint[0] = circle.midpoint[0] - 10
 
         print(circle.midpoint, radius, circle_point)
 
-        plot_frame_with_circle(frame, circle.midpoint, circle.radius)
+        plot_frame_with_circle(frame, circle.midpoint, circle.radius, radius_ratio)
 
 
 if __name__ == '__main__':
