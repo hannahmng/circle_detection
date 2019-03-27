@@ -4,6 +4,8 @@ from circle import Circle
 import cv2
 from matplotlib import pyplot as plt
 
+from trial_of_brute_force_search import brute_force_search
+
 DEFAULT_VIDEO_FILES = ["/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_001.mp4",
                        "/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_002.mp4",
                        "/mnt/storage/data/s3/procedures-gallery-prod/MPL/MPL_003.mp4",
@@ -41,6 +43,8 @@ def main():
         frame = choose_frame(video, args.ms_options)
 
         _, thresh_frame = cv2.threshold(frame, 10, 50, cv2.THRESH_BINARY)
+        
+        rad, mid_x, mid_y = brute_force_search(thresh_frame)
 
         if has_mask(thresh_frame):
             curr_frame_has_mask = True
@@ -52,18 +56,18 @@ def main():
         plt.show()
 
         circle = Circle(edged_frame)
-        circle_point = circle.determine_midpoint()
+        circle.determine_midpoint()
         radius = circle.determine_radius()
 
         if curr_frame_has_mask:
             circle.midpoint[0] = circle.midpoint[0] - 10
 
-        print(circle.midpoint, radius, circle_point)
+        print(circle.midpoint, radius)
 
         plot_frame_with_circle(frame, circle.midpoint, circle.radius, radius_ratio)
 
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     main()
 

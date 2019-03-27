@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 
 class Circle:
-    NO_OF_SEARCH_LINES = 5
+    NO_OF_SEARCH_LINES = 3
 
     def __init__(self, frame):
 
@@ -13,17 +13,32 @@ class Circle:
         self.has_circle = True
 
     def determine_midpoint(self):
+        
+        midpoints = []
 
-        top_left, top_right = self.find_edges_of_top_secant()
+        for offset in range(5, 400, 10):
+            
+            top_left, top_right = self.find_edges_of_top_secant(offset=offset)
 
-        bottom_left, bottom_right = self.find_edges_of_bottom_secant()
+            bottom_left, bottom_right = self.find_edges_of_bottom_secant(offset=offset)
 
-        top_right, bottom_left = self.length_check(top_right, top_left, bottom_right, bottom_left, offset=2)
+            # top_right, bottom_left = self.length_check(top_right, top_left, bottom_right, bottom_left, offset=2)
+            
+            midpoints.append([(top_right[0] + bottom_left[0])/2, (top_right[1] + bottom_left[1])/2])
 
-        self.midpoint[0] = (top_right[0] + bottom_left[0])/2
-        self.midpoint[1] = (top_right[1] + bottom_left[1])/2
+            # todo only for debugging purposes
+            fig, ax = plt.subplots()
+            ax.imshow(self.frame, cmap='gray')
+            ax.autoscale(False)
+            ax.scatter(midpoints[-1][1], midpoints[-1][0], color='r')
+            ax.scatter(top_right[1], top_right[0], color='r')
+            ax.scatter(bottom_left[1], bottom_left[0], color='r')
+            ax.scatter(bottom_right[1], bottom_right[0], color='r')
+            ax.scatter(top_left[1], top_left[0], color='r')
+            plt.show()
 
-        return bottom_right
+        self.midpoint[0] = int(np.mean([point[0] for point in midpoints]))  # (top_right[0] + bottom_left[0])/2
+        self.midpoint[1] = int(np.mean([point[1] for point in midpoints]))  # (top_right[1] + bottom_left[1])/2
 
     def length_check(self, top_right, top_left, bottom_right, bottom_left, offset):
 
@@ -32,7 +47,7 @@ class Circle:
         bottom_length = bottom_right[1] - bottom_left[1]
         bottom_mid_point = 1/2*(bottom_right[1] - bottom_left[1])
 
-        if abs(top_length - bottom_length) > 20 or abs(top_mid_point - bottom_mid_point) > 20:
+        if abs(top_length - bottom_length) > 50 or abs(top_mid_point - bottom_mid_point) > 50:
 
             if top_right[0] > bottom_right[0]:
                 print('WARNING something is wrong - top and bottom have passed each other')
