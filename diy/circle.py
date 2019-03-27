@@ -112,14 +112,23 @@ class Circle:
 
         return bottom_left, bottom_right
 
-    def determine_radius(self, circle_point):
+    def determine_radius(self):
 
-        delta_x = abs(self.midpoint[1] - circle_point[1])
-        delta_y = abs(self.midpoint[0] - circle_point[0])
+        mid_point = self.frame.shape[1] * 0.5
+        radii = []
 
-        # todo make this be majority vote over several points along middle (for long axis)
+        for line in range(mid_point-self.NO_OF_SEARCH_LINES, mid_point+self.NO_OF_SEARCH_LINES):
 
-        self.radius = np.sqrt(delta_x**2 + delta_y**2)
+            pixel = np.where(self.frame[line, :] > 0)
+            circle_point = [line, pixel[0]]
+
+            delta_x = abs(self.midpoint[1] - circle_point[1])
+            delta_y = abs(self.midpoint[0] - circle_point[0])
+
+            curr_radius = np.sqrt(delta_x**2 + delta_y**2)
+            radii.append(curr_radius)
+
+        self.radius = np.mean(radii)
 
         if self.radius < (1/2.5)*(self.frame.shape[1]):
             raise TypeError("no circle could be found in this image")

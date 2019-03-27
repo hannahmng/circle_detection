@@ -25,9 +25,9 @@ def has_mask(frame):
     return False
 
 
-def plot_frame_with_circle(frame, midpoint, radius):
+def plot_frame_with_circle(frame, midpoint, radius, radius_ratio):
 
-    ellipse_to_be_drawn = Ellipse((midpoint[1], midpoint[0]), radius, radius*0.85, color='r', fill=False)
+    ellipse_to_be_drawn = Ellipse((midpoint[1], midpoint[0]), radius, radius*radius_ratio, color='r', fill=False)
 
     fig, ax = plt.subplots()
     ax.imshow(frame, cmap='gray')
