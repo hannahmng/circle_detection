@@ -41,7 +41,7 @@ def main():
             curr_frame_has_mask = True
             thresh_frame = thresh_frame[20:, 20:frame.shape[1] - 20]
 
-        edged_frame = cv2.Canny(thresh_frame, 0, 12)
+        edged_frame = cv2.Canny(thresh_frame, 0, 50)
 
         plt.imshow(edged_frame, cmap='gray')
         plt.show()

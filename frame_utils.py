@@ -3,13 +3,16 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-def get_frame(filepath, ms):
+def get_frame(filepath, ms, b_w=True):
 
     vid = cv2.VideoCapture(filepath)
     vid.set(cv2.CAP_PROP_POS_MSEC, ms)
     _, frame = vid.read()
 
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    if b_w:
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    else:
+        return frame
 
     return frame
 
@@ -36,16 +39,29 @@ def plot_frame_with_circle(frame, midpoint, radius):
     plt.show()
 
 
-def choose_frame(video_file, ms_options):
+def plot_frame_with_corner_points(frame, top_left, top_right, bottom_left, bottom_right):
+
+    fig, ax = plt.subplots()
+    ax.imshow(frame, cmap='gray')
+    ax.autoscale(False)
+    ax.scatter(top_left[1], top_left[0], color='r')
+    ax.scatter(top_right[1], top_right[0], color='r')
+    ax.scatter(bottom_left[1], bottom_left[0], color='r')
+    ax.scatter(bottom_right[1], bottom_right[0], color='r')
+    plt.show()
+
+
+def choose_frame(video_file, ms_options, verbose=True):
 
     best_frame = []
     highest_max_val_idx = 0
+    best_ms = 0
 
     for ms in ms_options:
 
         try:
             frame = get_frame(video_file, int(ms))
-        except cv2.Error:
+        except Exception:
             print("WARNING tried to get frame outside of video length")
             continue
 
@@ -58,11 +74,12 @@ def choose_frame(video_file, ms_options):
 
             highest_max_val_idx = max_val_idx
             best_frame = frame
+            best_ms = ms
 
-    plt.imshow(best_frame, cmap='gray')
-    plt.show()
+    if verbose:
+        plt.imshow(best_frame, cmap='gray')
+        plt.show()
+        plt.hist(best_frame.ravel(), bins=256, fc='k', ec='k')
+        plt.show()
 
-    plt.hist(best_frame.ravel(), bins=256, fc='k', ec='k')
-    plt.show()
-
-    return best_frame
+    return best_frame, best_ms
