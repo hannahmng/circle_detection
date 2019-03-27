@@ -114,10 +114,10 @@ class Circle:
 
     def determine_radius(self):
 
-        mid_point = self.frame.shape[1] * 0.5
+        mid_line = self.midpoint[0]
         radii = []
 
-        for line in range(mid_point-self.NO_OF_SEARCH_LINES, mid_point+self.NO_OF_SEARCH_LINES):
+        for line in range(mid_line-self.NO_OF_SEARCH_LINES, mid_line+self.NO_OF_SEARCH_LINES):
 
             pixel = np.where(self.frame[line, :] > 0)
             circle_point = [line, pixel[0]]
