@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e805072-b040-4ad5-8554-9cdf93c3e6d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rectangle_cropping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/diy_circle_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/diy_circle_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frame_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/frame_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frame_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/frame_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rectangle_cropping.py" beforeDir="false" afterPath="$PROJECT_DIR$/rectangle_cropping.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +19,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rectangle_cropping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            <state relative-caret-position="789">
+              <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/run_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diy_circle_detection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -31,24 +55,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/circle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="892">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#733#1822#0" />
+                <element signature="e#449#814#0" />
+                <element signature="e#5882#6200#0" />
+                <element signature="e#6262#6612#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frame_utils.py">
+        <entry file="file://$PROJECT_DIR$/utils/frame_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="519">
               <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#103#271#0" />
                 <element signature="e#300#423#0" />
                 <element signature="e#484#767#0" />
                 <element signature="e#829#1112#0" />
@@ -71,7 +95,17 @@
       <find>TypeErr</find>
       <find>top</find>
       <find>print</find>
+      <find>edged_frame</find>
+      <find>top_right</find>
+      <find>bottom_right</find>
+      <find>bottom_left</find>
+      <find>length_check</find>
     </findStrings>
+    <replaceStrings>
+      <replace>processed_frame</replace>
+      <replace>self.top_right</replace>
+      <replace>self.bottom_left</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,9 +115,11 @@
       <list>
         <option value="$PROJECT_DIR$/edge detection.py" />
         <option value="$PROJECT_DIR$/circe_detection_using_precoded.py" />
-        <option value="$PROJECT_DIR$/diy_circle_detection.py" />
         <option value="$PROJECT_DIR$/frame_utils.py" />
+        <option value="$PROJECT_DIR$/diy_circle_detection.py" />
         <option value="$PROJECT_DIR$/circle.py" />
+        <option value="$PROJECT_DIR$/utils/run_utils.py" />
+        <option value="$PROJECT_DIR$/utils/frame_utils.py" />
         <option value="$PROJECT_DIR$/rectangle_cropping.py" />
       </list>
     </option>
@@ -106,6 +142,11 @@
             <path>
               <item name="pre_processing" type="b2602c69:ProjectViewProjectNode" />
               <item name="pre_processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pre_processing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pre_processing" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -132,6 +173,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/diy" />
     </key>
@@ -242,11 +284,11 @@
     <frame x="0" y="424" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16130732" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.10911966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.3767492" />
-      <window_info anchor="bottom" id="Debug" order="1" weight="0.1883746" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.17438105" />
+      <window_info anchor="bottom" id="Debug" order="1" weight="0.09257266" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32938644" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32938644" />
       <window_info anchor="bottom" id="Terminal" order="4" />
@@ -260,16 +302,28 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10911966" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.17438105" />
+      <window_info anchor="bottom" id="Debug" order="1" weight="0.1883746" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32938644" />
+      <window_info anchor="bottom" id="Python Console" order="3" weight="0.32938644" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32831" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/circle.py</url>
-          <line>104</line>
-          <option name="timeStamp" value="130" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -312,23 +366,44 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/circe_detection_using_precoded.py" />
+    <entry file="file://$PROJECT_DIR$/circle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#449#814#0" />
+            <element signature="e#5882#6200#0" />
+            <element signature="e#6262#6612#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/diy_circle_detection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frame_utils.py">
+    <entry file="file://$PROJECT_DIR$/utils/run_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="825">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/frame_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#103#271#0" />
             <element signature="e#300#423#0" />
             <element signature="e#484#767#0" />
             <element signature="e#829#1112#0" />
@@ -336,21 +411,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/circle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="892">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#733#1822#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rectangle_cropping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="789">
+          <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

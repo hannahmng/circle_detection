@@ -3,13 +3,13 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-def get_frame(filepath, ms, b_w=True):
+def get_frame(filepath, ms, b_and_w=True):
 
     vid = cv2.VideoCapture(filepath)
     vid.set(cv2.CAP_PROP_POS_MSEC, ms)
     _, frame = vid.read()
 
-    if b_w:
+    if b_and_w:
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     else:
         return frame
@@ -51,7 +51,7 @@ def plot_frame_with_corner_points(frame, top_left, top_right, bottom_left, botto
     plt.show()
 
 
-def choose_frame(video_file, ms_options, verbose=True):
+def choose_frame(video_file, ms_options, verbose=True, b_and_w=True):
 
     best_frame = []
     highest_max_val_idx = 0
@@ -60,7 +60,7 @@ def choose_frame(video_file, ms_options, verbose=True):
     for ms in ms_options:
 
         try:
-            frame = get_frame(video_file, int(ms))
+            frame = get_frame(video_file, int(ms), b_and_w)
         except Exception:
             print("WARNING tried to get frame outside of video length")
             continue
@@ -71,7 +71,6 @@ def choose_frame(video_file, ms_options, verbose=True):
         max_val_idx = np.argmax(cut_data)
 
         if max_val_idx > highest_max_val_idx:
-
             highest_max_val_idx = max_val_idx
             best_frame = frame
             best_ms = ms
